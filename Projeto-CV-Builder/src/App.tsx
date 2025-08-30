@@ -1,4 +1,4 @@
-import CurriculumPreview from './curriculo';
+import CurriculumPreview from './pages/curriculo';
 
 function App() {
   return (
