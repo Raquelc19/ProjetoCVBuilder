@@ -1,6 +1,21 @@
 import { MdSupervisorAccount } from "react-icons/md";
+import { useState } from "react";
 
 function CurriculumPreview() {
+
+const [skills, setSkills] = useState<{ name: string; level: string }[]>([]);
+const [skillName, setSkillName] = useState(""); 
+const [skillLevel, setSkillLevel] = useState("Básico"); 
+const addSkill = () => {
+  if (skillName.trim() === "") return;
+  setSkills([...skills, { name: skillName, level: skillLevel }]);
+  setSkillName("");
+  setSkillLevel("Básico");
+};
+const removeSkill = (index: number) => {
+  setSkills(skills.filter((_, i) => i !== index)); // remove pelo índice
+};
+
   return (
     
     <main className="min-h-screen w-screen grid place-items-center bg-white">
@@ -34,6 +49,59 @@ function CurriculumPreview() {
               <p>Este resumo aparecerá no topo do currículo</p>
             </div>
           </div>
+          <div className="p-5 text-black">
+  <h3 className="text-base font-semibold mb-2">🛠️ Habilidades</h3>
+  <p className="text-sm text-gray-600 mb-2">Adicione suas principais competências técnicas</p>
+
+  {/* Input para nome da habilidade */}
+  <div className="flex gap-2 mb-3">
+    <input
+      type="text"
+      placeholder="Nome da habilidade"
+      className="border rounded px-2 py-1 flex-1"
+      value={skillName}
+      onChange={(e) => setSkillName(e.target.value)}
+    />
+
+    {/* Seletor de nível */}
+    <select
+      className="border rounded px-2 py-1"
+      value={skillLevel}
+      onChange={(e) => setSkillLevel(e.target.value)}
+    >
+      <option>Básico</option>
+      <option>Intermediário</option>
+      <option>Avançado</option>
+    </select>
+
+    {/* Adicionar */}
+    <button
+      className="bg-purple-900 text-white px-3 rounded"
+      onClick={addSkill}
+    >
+      +
+    </button>
+  </div>
+
+  {/* Habilidades */}
+  <ul className="space-y-2">
+    {skills.map((skill, index) => (
+      <li key={index} className="flex justify-between items-center bg-gray-100 p-2 rounded">
+        <span>
+          <strong>{skill.name}</strong> - {skill.level}
+        </span>
+        {/* Botão de remover */}
+        <button
+          className="text-red-500 font-bold"
+          onClick={() => removeSkill(index)}
+        >
+          X
+        </button>
+      </li>
+    ))}
+  </ul>
+</div>
+
         </section>
 
         <section className="w-[45%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto h-full">
@@ -50,10 +118,20 @@ function CurriculumPreview() {
 
           <div className="p-5 text-black">
             <h3 className="text-base font-semibold mb-2">🛠️Habilidades</h3>
-            <div className="bg-gray-100 p-4 rounded text-gray-500 italic text-center text-sm">
+            {skills.length === 0 ? (
+              <div className="bg-gray-100 p-4 rounded text-gray-500 italic text-center text-sm">
               Suas habilidades
             </div>
-          </div>
+          ) : (
+          <ul className="list-disc pl-5">
+            {skills.map((skill, index) => (
+              <li key={index} className="text-sm">
+                {skill.name} - <span className="italic">{skill.level}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+  </div>
 
           <div className="p-5 text-black">
             <h3 className="text-base font-semibold mb-2">💼Experiência Profissional</h3>
