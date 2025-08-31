@@ -55,6 +55,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+button {
+  @apply appearance-none bg-gray-300 font-semibold;
+}
+
+input {
+  @apply mt-1 mb-3 pt-2 pb-2 pl-3 border-2 border-gray-300 rounded-md;
+}
+
+textarea {
+  @apply h-25 mt-1 mb-3 pt-2 pb-2 pl-3 border-2 border-gray-300 rounded-md;
+}
+
+.add-btn {
+  width: 3.2rem;
+  height: 2.7rem;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
