@@ -1,5 +1,7 @@
 import { MdSupervisorAccount } from "react-icons/md";
 import { useState } from "react";
+import FormSection from "../components/Layout/FormSection";
+import PreviewSection from "../components/Layout/PreviewSection";
 
 function CurriculumPreview() {
 
@@ -146,6 +148,8 @@ const removeSkill = (index: number) => {
             Currículo gerado pelo Gerador de Currículos IA
           </footer>
         </section>
+        <FormSection />
+        <PreviewSection />
       </div>
     </main>
   );
