@@ -3,7 +3,7 @@ import PersonalInfo from "../Form/PersonalInfo"
 import Skills from "../Form/Skills"
 
 
-function FormSection() {
+function FormSection({experiences, setExperiences}) {
     return(
         <section className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto">
           <div className="bg-purple-900 text-white p-5 text-center">
@@ -12,7 +12,7 @@ function FormSection() {
           </div>
           <PersonalInfo />
           <Skills />
-          <Experience />
+          <Experience experiences={experiences} setExperiences={setExperiences}/>
         </section>
     )
 }

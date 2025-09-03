@@ -2,7 +2,7 @@ import ExperienceSection from "../Preview/ExperienceSection"
 import PersonalHeader from "../Preview/PersonalHeader"
 import SkillsSection from "../Preview/SkillsSection"
 
-function PreviewSection() {
+function PreviewSection({experiences, setExperiences}) {
     return(
         <section className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto h-full">
           <div className="bg-purple-900 text-white p-5 text-center">
@@ -11,7 +11,7 @@ function PreviewSection() {
           </div>
           <PersonalHeader />
           <SkillsSection />
-          <ExperienceSection />
+          <ExperienceSection experiences={experiences} />
           <div className="bg-purple-900 h-[1px] w-full mt-4"></div>
 
           <footer className="text-center py-3 text-xs mt-auto text-gray-500">
