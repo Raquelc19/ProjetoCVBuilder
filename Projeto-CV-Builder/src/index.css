@@ -8,13 +8,14 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: white;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 a {
   font-weight: 500;
@@ -57,15 +58,15 @@ button:focus-visible {
 }
 
 button {
-  @apply appearance-none bg-gray-300 font-semibold;
+  @apply appearance-none bg-[#869CF5ff] font-semibold;
 }
 
 input {
-  @apply mt-1 mb-3 pt-2 pb-2 pl-3 border-2 border-gray-300 rounded-md;
+  @apply  pt-2 pb-2 pl-3 border-2 border-[#869CF5ff] rounded-md;
 }
 
 textarea {
-  @apply h-25 mt-1 mb-3 pt-2 pb-2 pl-3 border-2 border-gray-300 rounded-md;
+  @apply h-25 mt-1 mb-3 pt-2 pb-2 pl-3 border-2 border-[#869CF5ff] rounded-md;
 }
 
 .add-experiencia {
@@ -79,6 +80,10 @@ textarea {
 
 .adicionar-btn {
   @apply bg-purple-900 text-white mr-3;
+}
+
+.btn-exportar {
+  @apply bg-purple-900;
 }
 
 @media (prefers-color-scheme: light) {

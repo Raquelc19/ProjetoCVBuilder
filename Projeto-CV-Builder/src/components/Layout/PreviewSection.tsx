@@ -5,7 +5,7 @@ import SkillsSection from "../Preview/SkillsSection"
 function PreviewSection({experiences, setExperiences}) {
     return(
         <section className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto h-full">
-          <div className="bg-purple-900 text-white p-5 text-center">
+          <div className="bg-[#3ca58b] text-white p-5 text-center">
             <h1 className="text-[25px] font-bold">Preview do Currículo</h1>
             <p className="text-sm mt-1">Visualização em tempo real</p>
           </div>
