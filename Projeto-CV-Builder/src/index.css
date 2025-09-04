@@ -86,6 +86,10 @@ textarea {
   @apply bg-purple-900;
 }
 
+.del-btn {
+  @apply bg-white border-none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

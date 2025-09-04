@@ -1,6 +1,7 @@
 import { MdWorkOutline } from "react-icons/md";
 import { useState } from 'react';
 import ExperienceSection from "../Preview/ExperienceSection";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 function Experience({experiences, setExperiences}) {
     const [showForm, setShowForm] = useState(false);
@@ -23,6 +24,10 @@ function Experience({experiences, setExperiences}) {
             setShowForm(false);
             
         }
+    }
+
+    const handleDeleteExperience = (idExperience) => {
+        setExperiences(experiences.filter(experience => experience.id !== idExperience))
     }
 
     return(
@@ -73,10 +78,17 @@ function Experience({experiences, setExperiences}) {
                     <div key={exp.id}>
                         <li>
                             <ul className="mt-4 mb-3 pt-1.5 pb-2 pl-3 border-2 border-gray-300 rounded-md">
-                                <li className="font-semibold text-lg">{exp.cargo}</li>
-                                <li className="font-medium text-base text-gray-500">{exp.empresa}</li>
-                                <li className="text-sm">Início: {exp.dataInicial} | Fim: {exp.dataFinal}</li>
-                                <li className="text-sm font-normal mt-2.5">{exp.descricao}</li> 
+                                <div className="flex">
+                                    <div className="">
+                                        <li className="font-semibold text-lg">{exp.cargo}</li>
+                                        <li className="font-medium text-base text-gray-500">{exp.empresa}</li>
+                                        <li className="text-sm">Início: {exp.dataInicial} | Fim: {exp.dataFinal}</li>
+                                        <li className="text-sm font-normal mt-2.5">{exp.descricao}</li> 
+                                    </div>
+                                    <div className="flex w-1/2 justify-end items-center">
+                                        <button onClick={() => handleDeleteExperience(exp.id)} className="del-btn transform motion-safe:hover:scale-110">< FaRegTrashAlt /></button>
+                                    </div>
+                                </div>
                             </ul>
                         </li>
                         {/* <ExperienceSection 
