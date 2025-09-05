@@ -1,7 +1,9 @@
 import { useState } from "react";
+import type { HeaderSectionProps } from "../../types/cv.types";
 
-function HeaderSection() {
-  const[key, setKey] = useState(localStorage.getItem("openai_api_key" ) || "");
+function HeaderSection({exportPdf}: HeaderSectionProps) {
+   const[key, setKey] = useState(localStorage.getItem("openai_api_key" ) || "");
+  // const { exportarPdf } = usePdfExport();
 
   const salvar = () => {
         //aqui o objetivo é criar o openai e passar essa key para openai para que seja salva ao recarregar
@@ -10,7 +12,7 @@ function HeaderSection() {
         setKey("");
     }
 
-  const verificarTecla = (e) => {
+  const verificarTecla = (e: any) => {
       if (e.key === 'Enter') {
           salvar();
       }
@@ -37,6 +39,7 @@ function HeaderSection() {
           <button
             className="btn-exportar px-5 py-2 rounded-full border border-purple-600 bg-[#6F7DF3ff] text-white 
                        hover:bg-purple-700 hover: transition-all"
+            onClick={exportPdf}
           >
             Exportar PDF
           </button>

@@ -1,11 +1,11 @@
 import { MdWorkOutline } from "react-icons/md";
 import { useState } from 'react';
-import ExperienceSection from "../Preview/ExperienceSection";
 import { FaRegTrashAlt } from "react-icons/fa";
+import { type Experience as ExperienceType, type ExperienceProps, type ExperienceFormData } from "../../types/cv.types";
 
-function Experience({experiences, setExperiences}) {
-    const [showForm, setShowForm] = useState(false);
-    const [dataForm, setDataForm] = useState({
+function Experience({experiences, setExperiences}: ExperienceProps) {
+    const [showForm, setShowForm] = useState<boolean>(false);
+    const [dataForm, setDataForm] = useState<ExperienceFormData>({
         empresa: "",
         cargo: "",
         dataInicial: "",
@@ -13,7 +13,8 @@ function Experience({experiences, setExperiences}) {
         descricao: ""
     });
 
-    const handleChangeData = (e: any) => {
+    //o event recebe essa tipagem pode variar entre dois elementos pois ele funciona tanto em inputs como em textarea
+    const handleChangeData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setDataForm({...dataForm, [e.target.name]: e.target.value});
     }
 
@@ -26,7 +27,7 @@ function Experience({experiences, setExperiences}) {
         }
     }
 
-    const handleDeleteExperience = (idExperience) => {
+    const handleDeleteExperience = (idExperience: number) => {
         setExperiences(experiences.filter(experience => experience.id !== idExperience))
     }
 
@@ -74,7 +75,7 @@ function Experience({experiences, setExperiences}) {
             )}
 
             <ul>
-                {experiences.map((exp) => (
+                {experiences.map((exp: ExperienceType) => (
                     <div key={exp.id}>
                         <li>
                             <ul className="mt-4 mb-3 pt-1.5 pb-2 pl-3 border-2 border-gray-300 rounded-md">
@@ -91,13 +92,6 @@ function Experience({experiences, setExperiences}) {
                                 </div>
                             </ul>
                         </li>
-                        {/* <ExperienceSection 
-                            cargo={exp.cargo} 
-                            empresa={exp.empresa} 
-                            dataInicial={exp.dataInicial} 
-                            dataFinal={exp.dataFinal}
-                            descricao={exp.descricao}
-                        /> */}
                     </div>
                 ))}
             </ul>

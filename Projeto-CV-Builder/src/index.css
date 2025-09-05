@@ -78,6 +78,31 @@ textarea {
   height: 2.7rem;
 }
 
+/* src/styles/print.css
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body * {
+    visibility: hidden;
+  }
+  
+  #preview-curriculo,
+  #preview-curriculo * {
+    visibility: visible;
+  }
+  
+  #preview-curriculo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+} */
+
 .adicionar-btn {
   @apply bg-purple-900 text-white mr-3;
 }
@@ -100,5 +125,28 @@ textarea {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+
+@media print {
+  #preview-area {
+    position: absolute !important;
+    top: 7 !important;
+    left: 5 !important;
+    width: 99% !important;
+    height: auto !important;
+    min-height: 290mm !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+  
+  #preview-area > * {
+    break-inside: avoid; /* Colocamos essa estilização para evitar que elementos sejam cortados entre páginas  */
+  }
+  
+  body, html {
+    height: auto !important;
+    overflow: visible !important;
   }
 }

@@ -1,9 +1,10 @@
+import type { FormSectionProps } from "../../types/cv.types"
 import Experience from "../Form/Experience"
 import PersonalInfo from "../Form/PersonalInfo"
 import Skills from "../Form/Skills"
 
 
-function FormSection({experiences, setExperiences}) {
+function FormSection({experiences, setExperiences}: FormSectionProps) {
     return(
         <section className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto">
           <div className="bg-[#5c75db] text-white p-5 text-center">
