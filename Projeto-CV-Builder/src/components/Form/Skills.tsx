@@ -12,7 +12,7 @@ function Skills() {
               <select className="mt-1 mb-3 ml-3 mr-3 pt-1.5 pb-2 pl-3 border-2 border-[#869CF5ff] rounded-md">
                 <option>Básico</option>
                 <option>Intermediário</option>
-                <option>Avanço</option>
+                <option>Avançado</option>
               </select>
               <button className="add-btn text-white font-bold">+</button>
             </div>

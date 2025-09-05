@@ -44,33 +44,35 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
 
 
             {showForm && (
-                <div>
+                <div className="flex flex-col gap-4">
                     <div className="area-experiencia-emp-cargo flex">
-                        <div className="flex flex-col mr-4 w-full">
+                        <div className="flex flex-col mr-4 w-full gap-2">
                             <label className="info-dados">Empresa:*</label>
                             <input onChange={handleChangeData} type="text" name="empresa" value={dataForm.empresa} placeholder="Nome da Empresa"></input>
                         </div>
-                        <div className="flex flex-col w-full">
+                        <div className="flex flex-col w-full gap-2">
                             <label className="info-dados">Cargo:*</label>
                             <input onChange={handleChangeData} type="text" name="cargo" value={dataForm.cargo} placeholder="Seu cargo na empresa"></input>
                         </div>
                     </div>
                     <div className="area-experiencia-data flex">
-                        <div className="flex flex-col mr-4 w-full">
+                        <div className="flex flex-col mr-4 w-full gap-2">
                             <label className="info-dados">Data de Início</label>
                             <input onChange={handleChangeData} type="date" name="dataInicial" value={dataForm.dataInicial} placeholder="Nome da Empresa"></input>
                         </div>
-                        <div className="flex flex-col w-full">
+                        <div className="flex flex-col w-full gap-2">
                             <label className="info-dados">Data de Fim</label>
                             <input onChange={handleChangeData} type="date" name="dataFinal" value={dataForm.dataFinal} placeholder="Seu cargo na empresa"></input>
                         </div>
                     </div>
-                    <div className="descricao-atvs flex flex-col">
+                    <div className="descricao-atvs flex flex-col gap-1">
                         <label className="info-resumo">Descrição das Atividades</label>
                         <textarea onChange={handleChangeData} name="descricao" value={dataForm.descricao} placeholder="Descreva suas principais atividades, responsabilidades e conquistas..."></textarea>
                     </div>
+                    <div className="flex gap-2 ">
                     <button onClick={() => handleAddExperiences()} className="adicionar-btn">Adicionar</button>
                     <button onClick={() => setShowForm(false)}>Cancelar</button>  
+                    </div>
                 </div>  
             )}
 
@@ -97,7 +99,7 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
             </ul>
             <div className="text-center">
                 <div className="flex justify-center mt-6">
-                <MdWorkOutline className="text-6xl text-gray-300 items-center justify-items-center"/>
+                <MdWorkOutline className="text-6xl text-gray-300 items-center justify-items-center mt-4"/>
                 </div>
                 <p className="text-gray-600 text-base">Nenhuma habilidade adicionada ainda</p>
                 <p className="text-gray-600 text-sm mb-2">Adicione suas principais competências técnicas</p>

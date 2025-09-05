@@ -3,17 +3,15 @@ import { BiSolidCircle } from "react-icons/bi";
 function ExperienceSection({experiences}) {
 
     return (
-        <div className="experiencias m-5 text-gray-800 mb-15">
+        <div className="experiencias p-5 text-gray-800 w-full">
             <h3 className="text-base font-semibold mb-2">💼Experiência Profissional</h3>
             {experiences.length === 0 ? (
-                <div className=" text-black w-full ">
-                
                 <div className="bg-gray-100 p-4 rounded text-gray-500 italic text-center text-sm">
                     Suas experiências profissionais
                 </div>
-                </div>
+                
             ) : (
-            <ul className="">
+            <ul className="bg-gray-100 p-4 rounded text-sm text-black">
                 {experiences.map((experience) => (
                     <div>
                         <div className="flex">
