@@ -12,7 +12,7 @@ function PreviewSection({experiences, setExperiences}) {
           <PersonalHeader />
           <SkillsSection />
           <ExperienceSection experiences={experiences} />
-          <div className="bg-purple-900 h-[1px] w-full mt-4"></div>
+          <div className="h-[1px] w-full mt-4"></div>
 
           <footer className="text-center py-3 text-xs mt-auto text-gray-500">
             Currículo gerado pelo Gerador de Currículos IA

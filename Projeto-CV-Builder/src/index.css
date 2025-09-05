@@ -14,6 +14,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 
@@ -58,11 +59,11 @@ button:focus-visible {
 }
 
 button {
-  @apply appearance-none bg-[#869CF5ff] font-semibold;
+  @apply appearance-none bg-[#5c75db] text-white font-semibold;
 }
 
 input {
-  @apply  pt-2 pb-2 pl-3 border-2 border-[#869CF5ff] rounded-md;
+  @apply  pt-2 pb-2 pl-3 border-2 border-[#869CF5ff]  rounded-md;
 }
 
 textarea {
@@ -70,7 +71,7 @@ textarea {
 }
 
 .add-experiencia {
-  @apply w-full h-1/5 border-dashed border-gray-300 text-center bg-white;
+  @apply w-full h-1/5 border-dashed border-[#5c75db] text-center bg-white text-black;
 }
 
 .add-btn {
@@ -79,11 +80,11 @@ textarea {
 }
 
 .adicionar-btn {
-  @apply bg-purple-900 text-white mr-3;
+  @apply bg-[#3ca58b] text-white mr-3;
 }
 
 .btn-exportar {
-  @apply bg-purple-900;
+  @apply bg-[#5c75db];
 }
 
 .del-btn {
@@ -101,4 +102,21 @@ textarea {
   button {
     background-color: #f9f9f9;
   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1; 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8; 
 }

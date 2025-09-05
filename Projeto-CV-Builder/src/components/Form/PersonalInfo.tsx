@@ -52,9 +52,9 @@ function PersonalInfo() {
               <input type="email" placeholder="linkedin.com/in/seuperfil"></input>
             </div>
           </div> 
-          <div className="resum-profissional flex flex-col gap-1">
-            <div className="flex">
-              <label className="info-resumo">Resumo Profissional:</label>
+          <div className="resum-profissional flex flex-col gap-1 mt-4">
+            <div className="flex gap-6">
+              <label className="info-resumo mt-6">Resumo Profissional:</label>
               <button 
               className="ml-55"
               onClick={melhorarTextoProfissional}
