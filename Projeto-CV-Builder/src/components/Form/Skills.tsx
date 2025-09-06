@@ -54,14 +54,14 @@ function Skills({skills, setSkills}) {
       {/* Input de nova skill */}
       <div className="flex items-center gap-2 mb-3">
         <input
-          className="w-3/5 text-sm border rounded px-2 py-1"
+          className="w-3/5 text-sm border rounded px-2 py-2"
           type="text"
           placeholder="Nome da Habilidade (ex.: React, JS)"
           value={skillName}
           onChange={(e) => setSkillName(e.target.value)}
         />
         <select
-          className="mt-1 mb-3 ml-3 mr-3 pt-1.5 pb-2 pl-3 border-2 border-[#869CF5ff] rounded-md"
+          className="border-2 border-[#869CF5ff] rounded-md px-2 py-2 ml-1"
           value={skillLevel}
           onChange={(e) => setSkillLevel(e.target.value)}
         >
@@ -70,7 +70,7 @@ function Skills({skills, setSkills}) {
           <option>Avançado</option>
         </select>
         <button
-          className="add-btn text-white font-bold bg-blue-500 px-3 py-1 rounded"
+          className="add-btn text-white font-bold bg-blue-500 px-3 py-2 rounded ml-1"
           onClick={addSkill}
         >
           +
@@ -97,7 +97,7 @@ function Skills({skills, setSkills}) {
                 <strong>{skill.name}</strong> - {skill.level}
               </span>
               <button
-                className="text-red-500 font-bold"
+                className="text-white font-bold bg-blue-500 px-3 py-2 rounded "
                 onClick={() => removeSkill(index)}
               >
                 X
