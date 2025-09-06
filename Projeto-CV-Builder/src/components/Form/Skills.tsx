@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiTool } from "react-icons/fi";
 
-function Skills() {
+function Skills({skills, setSkills}) {
     // return(
     //     <div className="habilidades m-5 text-gray-800 flex flex-col gap-1">
     //         <div className="titulo-habilidades flex"><FiTool className="text-2xl"/><h2 className="font-semibold text-xl mt-0.4">Habilidades</h2></div>
@@ -28,7 +28,7 @@ function Skills() {
     // )
   const [skillName, setSkillName] = useState("");
   const [skillLevel, setSkillLevel] = useState("Básico");
-  const [skills, setSkills] = useState([]);
+  // const [skills, setSkills] = useState([]);
 
   const addSkill = () => {
     if (!skillName) return;

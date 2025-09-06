@@ -19,7 +19,7 @@ function CurriculumPreview() {
 
         {/* --- Formulário --- */}
         <FormSection experiences={experiences} setExperiences={setExperiences} skills={skills} setSkills ={setSkills} >
-          <Skills /> {/* passa estado */}
+          <Skills skills={ skills, setSkills }/> {/* passa estado */}
         </FormSection>
         {/* --- Preview --- */}
         <PreviewSection  experiences={experiences} skills={skills} ref={contentDocument}/>
