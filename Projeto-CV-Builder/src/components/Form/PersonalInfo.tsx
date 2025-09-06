@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { MdSupervisorAccount } from "react-icons/md";
 import { upgradeResume } from "../../services/aiService"
 
-function PersonalInfo() {
-  const [resumoProfissional, setResumoProfissional] = useState<string>("");
+function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, linkedin, setLinkedin, resumoProfissional,setResumoProfissional}) {
+
   const [loading, setLoading] = useState<boolean>(false);
   const [contadorCaractere, setContadorCaractere] = useState(0);
   const apiKey: string = localStorage.getItem("openai_api_key") || "";
+  
 
   useEffect(() => {
     setContadorCaractere(resumoProfissional.length)
@@ -20,12 +21,13 @@ function PersonalInfo() {
 
     if (!apiKey) {
       alert("É necessário informar uma chave da API primeiro.")
+      return
     }
 
     setLoading(true);
     try {
       const textoMelhorado = await upgradeResume(resumoProfissional, apiKey);
-      setResumoProfissional(textoMelhorado);
+      setResumoProfissional (textoMelhorado);
     } catch (error) {
         console.error(error);
         alert("Erro ao melhorar o texto.");
@@ -41,20 +43,20 @@ function PersonalInfo() {
             <hr className="text-gray-300 mb-4"/>
           <div className="area-nome flex flex-col gap-1">
             <label className="info-dados">Nome Completo:*</label>
-            <input type="text required" placeholder="Digite seu nome completo"></input>
+            <input type="text" required value={Nome} onChange={(e) =>setNome(e.target.value)} placeholder="Digite seu nome completo"></input>
           </div>
           <div className="area-email flex flex-col gap-1">
             <label className="info-dados">E-mail:*</label>
-            <input type="email required" placeholder="seu.email@exemplo.com"></input>
+            <input type="email" required value= {email} onChange={(e) =>setEmail(e.target.value)} placeholder="seu.email@exemplo.com"></input>
           </div>
           <div className="area-tel-lkdin flex ">
             <div className="flex flex-col mr-4 w-full gap-1">
               <label className="info-dados">Telefone:*</label>
-              <input type="text required" placeholder="(99)99999-9999"></input>
+              <input type="text required" value= {telefone} onChange={(e) => setTelefone (e.target.value)} placeholder="(99)99999-9999"></input>
             </div>
             <div className="flex flex-col w-full gap-1">
               <label className="info-dados">Linkedin:*</label>
-              <input type="text required" placeholder="linkedin.com/in/seuperfil"></input>
+              <input type="text" required value= {linkedin} onChange= {(e)=> setLinkedin (e.target.value)} placeholder="linkedin.com/in/seuperfil"></input>
             </div>
           </div> 
           <div className="resum-profissional flex flex-col gap-1 mt-4">
