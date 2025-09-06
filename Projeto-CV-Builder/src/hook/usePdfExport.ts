@@ -4,7 +4,6 @@ import type { usePdfExportReturn } from "../types/cv.types";
 
 const usePdfExport = (): usePdfExportReturn => {
     const contentDocument = useRef<HTMLDivElement>(null);
-
     const handleExport = useReactToPrint({
         contentRef: contentDocument,
         documentTitle: 'Curriculo',

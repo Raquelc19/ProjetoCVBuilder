@@ -12,6 +12,7 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
         dataFinal: "",
         descricao: ""
     });
+    const [isChecked, setIsChecked] = useState<boolean>(false);
 
     //o event recebe essa tipagem pode variar entre dois elementos pois ele funciona tanto em inputs como em textarea
     const handleChangeData = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,6 +31,10 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
     const handleDeleteExperience = (idExperience: number) => {
         setExperiences(experiences.filter(experience => experience.id !== idExperience))
     }
+
+    const handleIsChecked = () => {
+        setIsChecked(!isChecked);
+    } 
 
     return(
         <div className="experiencias m-5 text-gray-800 mb-15 flex flex-col gap-1">
@@ -58,11 +63,18 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
                     <div className="area-experiencia-data flex">
                         <div className="flex flex-col mr-4 w-full gap-2">
                             <label className="info-dados">Data de Início</label>
+                            
                             <input onChange={handleChangeData} type="date" name="dataInicial" value={dataForm.dataInicial} placeholder="Nome da Empresa"></input>
                         </div>
                         <div className="flex flex-col w-full gap-2">
+                            <div>
                             <label className="info-dados">Data de Fim</label>
-                            <input onChange={handleChangeData} type="date" name="dataFinal" value={dataForm.dataFinal} placeholder="Seu cargo na empresa"></input>
+                            <span className="ml-12">Trabalho Atual</span>
+                            <input className="ml-2" type="checkbox" checked={isChecked} onChange={handleIsChecked}/>
+                            </div>
+                            {isChecked? <input onChange={handleChangeData} type="text" name="dataFinal" value={dataForm.dataFinal="Trabalho Atual"}></input> : <input onChange={handleChangeData} type="date" name="dataFinal" value={dataForm.dataFinal} ></input>
+                            }
+                            
                         </div>
                     </div>
                     <div className="descricao-atvs flex flex-col gap-1">
@@ -89,7 +101,7 @@ function Experience({experiences, setExperiences}: ExperienceProps) {
                                         <li className="text-sm font-normal mt-2.5">{exp.descricao}</li> 
                                     </div>
                                     <div className="flex w-1/2 justify-end items-center">
-                                        <button onClick={() => handleDeleteExperience(exp.id)} className="del-btn transform motion-safe:hover:scale-110">< FaRegTrashAlt /></button>
+                                        <button onClick={() => handleDeleteExperience(exp.id)} className="del-btn transform motion-safe:hover:scale-110">< FaRegTrashAlt className="text-gray-700" /></button>
                                     </div>
                                 </div>
                             </ul>

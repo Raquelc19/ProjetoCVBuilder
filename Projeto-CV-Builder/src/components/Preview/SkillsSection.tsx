@@ -1,7 +1,8 @@
 
 import { BiSolidCircle } from "react-icons/bi";
+import type { SkillsSectionProps } from "../../types/cv.types";
 
-function SkillsSection({ skills }) {
+function SkillsSection({ skills }: SkillsSectionProps) {
   return (
     <div className="habilidades m-5 text-gray-800 mb-15">
       <h3 className="text-base font-semibold mb-2">🛠️ Habilidades</h3>

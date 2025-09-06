@@ -1,6 +1,7 @@
 import { BiSolidCircle } from "react-icons/bi";
+import type { ExperienceSectionProps } from "../../types/cv.types";
 
-function ExperienceSection({experiences}) {
+function ExperienceSection({experiences}: ExperienceSectionProps) {
 
     return (
         <div className="experiencias p-5 text-gray-800 w-full">

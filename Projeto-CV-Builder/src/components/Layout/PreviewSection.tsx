@@ -3,9 +3,10 @@ import ExperienceSection from "../Preview/ExperienceSection"
 import PersonalHeader from "../Preview/PersonalHeader"
 import SkillsSection from "../Preview/SkillsSection"
 import type { PreviewSectionProps } from '../../types/cv.types';
+// import type { PreviewSectionProps } from '../../types/cv.types';
 
 
-const  PreviewSection = React.forwardRef(({ experiences, skills, Nome, email, telefone, linkedin, resumoProfissional },ref) => {
+const  PreviewSection = React.forwardRef(({ experiences, skills, Nome, email, telefone, linkedin, resumoProfissional }: PreviewSectionProps, ref) => {
     return(
         <section   className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto h-full " >
           <div className="bg-[#3ca58b] text-white p-5 text-center">

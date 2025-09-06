@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { MdSupervisorAccount } from "react-icons/md";
 import { upgradeResume } from "../../services/aiService"
+import type { PersonalInfoProps } from "../../types/cv.types";
 
-function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, linkedin, setLinkedin, resumoProfissional,setResumoProfissional}) {
+function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, linkedin, setLinkedin, resumoProfissional,setResumoProfissional}: PersonalInfoProps) {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [contadorCaractere, setContadorCaractere] = useState(0);
@@ -26,7 +27,7 @@ function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, li
 
     setLoading(true);
     try {
-      const textoMelhorado = await upgradeResume(resumoProfissional, apiKey);
+      const textoMelhorado = await upgradeResume({resume: resumoProfissional, apiKey});
       setResumoProfissional (textoMelhorado);
     } catch (error) {
         console.error(error);
@@ -79,7 +80,7 @@ function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, li
               className="mt-2 p-2 border rounded"
               maxLength={500}
             />
-            <div className="flex inline-flex">
+            <div className="flex">
               <p className="resume-p text-[11px] -mt-3">Este resumo aparecerá no topo do currículo</p>
               <span className="resume-p text-[11px] -mt-3 ml-70">{contadorCaractere}/500</span>
             </div>

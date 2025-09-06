@@ -1,4 +1,6 @@
-function PersonalHeader({Nome, email, telefone, linkedin, resumoProfissional}) {
+import type { PersonalHeaderProps } from "../../types/cv.types"
+
+function PersonalHeader({Nome, email, telefone, linkedin, resumoProfissional}: PersonalHeaderProps) {
     return(
         <div className="dados-pessoais p-5 text-black space-y-2">
             <h1 className="text-[25px] font-semibold italic">{(Nome.trim().length) > 0? Nome:"Nome Completo"}</h1>

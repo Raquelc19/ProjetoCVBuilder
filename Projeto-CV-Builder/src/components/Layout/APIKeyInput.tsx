@@ -11,7 +11,7 @@ export default function APIKeyInput() {
         setKey("");
     }
 
-    const verificarTecla = (e) => {
+    const verificarTecla = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             salvar();
         }

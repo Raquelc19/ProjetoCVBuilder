@@ -4,7 +4,7 @@ import PersonalInfo from "../Form/PersonalInfo"
 import Skills from "../Form/Skills"
 
 
-function FormSection({experiences, setExperiences, skills, setSkills, Nome, setNome, email, setEmail, telefone, setTelefone, linkedin, setLinkedin, resumoProfissional, setResumoProfissional}) {
+function FormSection({experiences, setExperiences, skills, setSkills, Nome, setNome, email, setEmail, telefone, setTelefone, linkedin, setLinkedin, resumoProfissional, setResumoProfissional}: FormSectionProps) {
     return(
         <section className="w-[55%] bg-white rounded-lg shadow-md flex flex-col overflow-y-auto">
           <div className="bg-[#5c75db] text-white p-5 text-center">
