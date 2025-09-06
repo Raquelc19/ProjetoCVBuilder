@@ -11,7 +11,7 @@ function ExperienceSection({experiences}) {
                 </div>
                 
             ) : (
-            <ul className="bg-gray-100 p-4 rounded text-sm text-black">
+            <ul className="p-4 rounded text-sm text-black">
                 {experiences.map((experience) => (
                     <div>
                         <div className="flex">
