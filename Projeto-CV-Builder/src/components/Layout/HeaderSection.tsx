@@ -25,13 +25,16 @@ function HeaderSection({exportPdf}: HeaderSectionProps) {
   <div className="flex flex-col gap-1">
     <div className="flex items-center gap-2">
       <img
-        src="https://img.icons8.com/?size=100&id=49462&format=png&color=000000"
+        src="assets/logo1.png"
         alt="Ícone do site"
-        className="w-8 h-8 object-contain"
+        className=" h-20 object-contain"
       />
-      <h1 className="text-xl font-bold text-[#5c75db]">Gerador de currículos IA</h1>
+      <div className="flex-col">
+        <h1 className="text-xl font-bold text-[#5c75db]">BrainCV.ia</h1>
+        <p className="text-sm text-[#5c75db] ">Gerador de currículos inteligentes</p>
+      </div>
     </div>
-    <p className="text-sm text-gray-600">Gerador de currículos inteligentes</p>
+    
   </div>
 
         <div className="flex items-center gap-6"> 

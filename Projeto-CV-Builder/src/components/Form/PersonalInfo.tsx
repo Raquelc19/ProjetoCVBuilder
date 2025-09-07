@@ -61,10 +61,10 @@ function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, li
             </div>
           </div> 
           <div className="resum-profissional flex flex-col gap-1 mt-4">
-            <div className="flex gap-6">
-              <label className="info-resumo mt-6">Resumo Profissional:</label>
+            <div className="flex justify-between items-center">
+              <label className="info-resumo mt-5">Resumo Profissional:</label>
               <button 
-              className="ml-55"
+              className="bg-[#5c75db] text-white px-3 py-1 rounded"
               onClick={melhorarTextoProfissional}
               //utilizamos essa propriedade para deixar o botão de carregando desabilidade enquanto está carregando
               disabled={loading}
@@ -77,7 +77,7 @@ function PersonalInfo({Nome, setNome, email, setEmail, telefone, setTelefone, li
               value={resumoProfissional}
               onChange={(e) => setResumoProfissional(e.target.value)}
               placeholder="Descreva brevemente suas competências, experiências e objetivos..." 
-              className="mt-2 p-2 border rounded"
+              className="mt-2 p-3 border rounded resize-y min-h-[120px]"
               maxLength={500}
             />
             <div className="flex">

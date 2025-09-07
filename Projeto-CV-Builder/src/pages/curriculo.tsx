@@ -18,9 +18,9 @@ function CurriculumPreview() {
   const [resumoProfissional, setResumoProfissional] = useState<string>("");
 
   return (
-    <main className="min-h-screen w-screen grid place-items-center bg-[url('background.png')] bg-cover bg-center bg-[#fcfbfb] ">
+    <main className="min-h-screen w-full grid place-items-center bg-[url('background.png')] bg-cover bg-center bg-[#fcfbfb] ">
         <HeaderSection exportPdf={exportarPdf}/>
-      <div className="flex justify-center w-[100vw] max-w-[1200px] h-[80vh] gap-6 mx-auto">
+      <div className="flex justify-center w-full max-w-[1200px] h-[80vh] gap-6 mx-auto mt-10 px-4">
         {/* --- Formulário --- */}
         <FormSection experiences={experiences} setExperiences={setExperiences} skills={skills} setSkills ={setSkills} 
             Nome= {Nome} setNome= {setNome}
@@ -33,6 +33,11 @@ function CurriculumPreview() {
         {/* --- Preview --- */}
         <PreviewSection  experiences={experiences} skills={skills} Nome={Nome} email={email} telefone= {telefone} linkedin= {linkedin} resumoProfissional={resumoProfissional} ref={contentDocument}/>
       </div>
+       <footer className="text-center text-gray-500 py-4 mt-10">
+        <p>
+          © 2025 Devriders. Todos os direitos reservados.
+        </p>
+      </footer>
     </main>
   );
 }

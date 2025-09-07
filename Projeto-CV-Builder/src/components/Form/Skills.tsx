@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FiTool } from "react-icons/fi";
 import type { SkillsProps } from "../../types/cv.types";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 function Skills({skills, setSkills}: SkillsProps) {
   const [skillName, setSkillName] = useState("");
@@ -73,10 +74,10 @@ function Skills({skills, setSkills}: SkillsProps) {
                 <strong>{skill.name}</strong> - {skill.level}
               </span>
               <button
-                className="text-white font-bold bg-blue-500 px-3 py-2 rounded "
                 onClick={() => removeSkill(index)}
+                className=" !bg-gray-100 del-btn transform motion-safe:hover:scale-110"
               >
-                X
+                <FaRegTrashAlt className="text-gray-700"/>
               </button>
             </li>
           ))}
