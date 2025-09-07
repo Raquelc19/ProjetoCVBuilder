@@ -8,12 +8,12 @@ import type { PreviewSectionProps } from '../../types/cv.types';
 
 const  PreviewSection = React.forwardRef(({ experiences, skills, Nome, email, telefone, linkedin, resumoProfissional }: PreviewSectionProps, ref) => {
     return(
-        <section   className="w-[55%] bg-white rounded-lg shadow-md flex flex-col h-full " >
+        <section   className="w-[55%] bg-white rounded-lg shadow-md flex flex-col h-full overflow-y-auto" >
           <div className="bg-[#3ca58b] text-white p-5 text-center">
             <h1 className="text-[25px] font-bold">Preview do Currículo</h1>
             <p className="text-sm mt-1">Visualização em tempo real</p>
           </div>
-          <div ref={ref} id="preview-area" className='print:w-full h-full print:scale-100 print:shadow-none flex-1 overflow-y-auto'>
+          <div ref={ref} id="preview-area" className='print:w-full h-full print:scale-100 print:shadow-none flex-1 '>
             <PersonalHeader Nome={Nome} email={email} telefone={telefone} linkedin={linkedin} resumoProfissional={resumoProfissional}/> 
             <SkillsSection skills={skills}/>
             <ExperienceSection experiences={experiences} />
