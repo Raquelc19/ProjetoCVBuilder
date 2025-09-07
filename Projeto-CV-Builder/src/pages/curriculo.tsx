@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from "react";
-import usePdfExport from '../hook/usePdfExport';
+import React, { useState } from "react";
+import usePdfExport from "../hook/usePdfExport";
 import FormSection from "../components/Layout/FormSection";
 import PreviewSection from "../components/Layout/PreviewSection";
 import HeaderSection from "../components/Layout/HeaderSection";
@@ -8,7 +7,6 @@ import Skills from "../components/Form/Skills";
 
 function CurriculumPreview() {
   const [experiences, setExperiences] = useState([]);
-  //nesse ponto, está sendo extraídos os dois parâmetros do usePdfExport
   const { exportarPdf, contentDocument } = usePdfExport();
   const [skills, setSkills] = useState([]);
   const [Nome, setNome] = useState<string>("");
@@ -18,29 +16,48 @@ function CurriculumPreview() {
   const [resumoProfissional, setResumoProfissional] = useState<string>("");
 
   return (
-    <main className="min-h-screen w-full grid place-items-center bg-[url('background.png')] bg-cover bg-center bg-[#fcfbfb] ">
-        <HeaderSection exportPdf={exportarPdf}/>
-      <div className="flex justify-center w-full max-w-[1200px] h-[80vh] gap-6 mx-auto mt-10 px-4">
+    <main className="w-full px-0">
+      <HeaderSection exportPdf={exportarPdf} />
+
+      <div className="flex flex-col lg:flex-row justify-center w-full max-w-[1200px] h-auto lg:h-[80vh] gap-6 mx-auto mt-10">
         {/* --- Formulário --- */}
-        <FormSection experiences={experiences} setExperiences={setExperiences} skills={skills} setSkills ={setSkills} 
-            Nome= {Nome} setNome= {setNome}
-            email= {email} setEmail={setEmail}
-            telefone= {telefone} setTelefone={setTelefone}
-            linkedin= {linkedin} setLinkedin={setLinkedin}
-            resumoProfissional= {resumoProfissional} setResumoProfissional={setResumoProfissional}>
-          <Skills skills={skills} setSkills ={setSkills} />
-        /</FormSection>
+        <FormSection
+          experiences={experiences}
+          setExperiences={setExperiences}
+          skills={skills}
+          setSkills={setSkills}
+          Nome={Nome}
+          setNome={setNome}
+          email={email}
+          setEmail={setEmail}
+          telefone={telefone}
+          setTelefone={setTelefone}
+          linkedin={linkedin}
+          setLinkedin={setLinkedin}
+          resumoProfissional={resumoProfissional}
+          setResumoProfissional={setResumoProfissional}
+        >
+          <Skills skills={skills} setSkills={setSkills} />
+        </FormSection>
+
         {/* --- Preview --- */}
-        <PreviewSection  experiences={experiences} skills={skills} Nome={Nome} email={email} telefone= {telefone} linkedin= {linkedin} resumoProfissional={resumoProfissional} ref={contentDocument}/>
+        <PreviewSection
+          experiences={experiences}
+          skills={skills}
+          Nome={Nome}
+          email={email}
+          telefone={telefone}
+          linkedin={linkedin}
+          resumoProfissional={resumoProfissional}
+          ref={contentDocument}
+        />
       </div>
-       <footer className="text-center text-gray-500 py-4 mt-10">
-        <p>
-          © 2025 Devriders. Todos os direitos reservados.
-        </p>
+
+      <footer className="w-full text-center text-gray-500 py-4 mt-10">
+        <p>© 2025 Devriders. Todos os direitos reservados.</p>
       </footer>
     </main>
   );
 }
-
 
 export default CurriculumPreview;
