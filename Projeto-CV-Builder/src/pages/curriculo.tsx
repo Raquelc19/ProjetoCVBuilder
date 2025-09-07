@@ -19,7 +19,7 @@ function CurriculumPreview() {
     <main className="w-full px-0">
       <HeaderSection exportPdf={exportarPdf} />
 
-      <div className="flex flex-col lg:flex-row justify-center w-full max-w-[1200px] h-auto lg:h-[80vh] gap-6 mx-auto mt-10">
+      <div className="flex flex-col lg:flex-row justify-center w-full max-w-[1200px] h-auto lg:h-[75vh] gap-6 mx-auto mt-5">
         {/* --- Formulário --- */}
         <FormSection
           experiences={experiences}
@@ -53,7 +53,7 @@ function CurriculumPreview() {
         />
       </div>
 
-      <footer className="w-full text-center text-gray-500 py-4 mt-10">
+      <footer className="w-full text-center text-gray-500 py-4 ">
         <p>© 2025 Devriders. Todos os direitos reservados.</p>
       </footer>
     </main>

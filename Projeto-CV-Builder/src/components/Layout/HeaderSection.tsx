@@ -22,20 +22,20 @@ function HeaderSection({exportPdf}: HeaderSectionProps) {
   return (
     <>
       <section className="w-full flex justify-between items-center px-10 pt-1 mt-3">
-  <div className="flex flex-col gap-1">
-    <div className="flex items-center gap-2">
-      <img
-        src="assets/logo1.png"
-        alt="Ícone do site"
-        className=" h-20 object-contain"
-      />
-      <div className="flex-col">
-        <h1 className="text-xl font-bold text-[#5c75db]">BrainCV.ia</h1>
-        <p className="text-sm text-[#5c75db] ">Gerador de currículos inteligentes</p>
-      </div>
-    </div>
-    
-  </div>
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2">
+            <img
+              src="assets/Logo-site.png"
+              alt="Ícone do site"
+              className=" h-20 object-contain"
+            />
+            <div className="flex-col">
+              <h1 className="text-xl font-bold text-[#5c75db]">BrainCV.ia</h1>
+              <p className="text-sm text-[#5c75db] ">Gerador de currículos inteligentes</p>
+            </div>
+          </div>
+          
+        </div>
 
         <div className="flex items-center gap-6"> 
           <input
