@@ -14,7 +14,6 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 
@@ -76,31 +75,6 @@ textarea {
   width: 3.2rem;
   height: 2.7rem;
 }
-
-/* src/styles/print.css
-@media print {
-  .no-print {
-    display: none !important;
-  }
-  
-  body * {
-    visibility: hidden;
-  }
-  
-  #preview-curriculo,
-  #preview-curriculo * {
-    visibility: visible;
-  }
-  
-  #preview-curriculo {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100% !important;
-    box-shadow: none !important;
-    border: none !important;
-  }
-} */
 
 .adicionar-btn {
   @apply bg-[#3ca58b] text-white mr-3;
