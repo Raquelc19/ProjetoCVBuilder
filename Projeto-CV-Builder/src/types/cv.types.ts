@@ -17,6 +17,11 @@ export interface ExperienceFormData {
     descricao: string;
 }
 
+export interface skill {
+    name: string;
+    level: string;
+}
+
 //nesse ponto, nomeamos como props para indicar o que o componente recebe de props
 export interface HeaderSectionProps {
     exportPdf: () => void;
@@ -33,12 +38,65 @@ export interface ExperienceProps {
     setExperiences: React.Dispatch<React.SetStateAction<Experience[]>>
 }
 
+export interface PersonalInfoProps {
+    Nome: string;
+    setNome: React.Dispatch<React.SetStateAction<string>>
+    email: string;
+    setEmail: React.Dispatch<React.SetStateAction<string>>
+    telefone: string
+    setTelefone: React.Dispatch<React.SetStateAction<string>>
+    linkedin: string
+    setLinkedin: React.Dispatch<React.SetStateAction<string>>
+    resumoProfissional: string
+    setResumoProfissional: React.Dispatch<React.SetStateAction<string>>
+}
+
+export interface SkillsProps {
+    skills: skill[];
+    setSkills: React.Dispatch<React.SetStateAction<skill[]>>
+}
+
 export interface FormSectionProps {
     experiences: Experience[];
-    setExperiences: React.Dispatch<React.SetStateAction<Experience[]>>
+    setExperiences: React.Dispatch<React.SetStateAction<Experience[]>>;
+    skills: skill[];
+    setSkills: React.Dispatch<React.SetStateAction<skill[]>>;
+    Nome: string;
+    setNome: React.Dispatch<React.SetStateAction<string>>;
+    email: string;
+    setEmail: React.Dispatch<React.SetStateAction<string>>;
+    telefone: string;
+    setTelefone: React.Dispatch<React.SetStateAction<string>>;
+    linkedin: string;
+    setLinkedin: React.Dispatch<React.SetStateAction<string>>;
+    resumoProfissional: string;
+    setResumoProfissional: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface PreviewSectionProps {
     experiences: Experience[];
+    skills: skill[];
+    Nome: string;
+    email: string;
+    telefone: string;
+    linkedin: string;
+    resumoProfissional: string;
     ref?: React.RefObject<HTMLDivElement>;
 }
+
+export interface ExperienceSectionProps {
+    experiences: Experience[];
+}
+
+export interface PersonalHeaderProps {
+    Nome: string;
+    email: string;
+    telefone: string;
+    linkedin: string;
+    resumoProfissional: string;
+}
+
+export interface SkillsSectionProps {
+    skills: skill[];
+}
+

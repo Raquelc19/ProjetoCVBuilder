@@ -1,8 +1,9 @@
 
-import { BiSolidCircle } from "react-icons/bi";
 import { FiTool } from "react-icons/fi";
+import type { SkillsSectionProps } from "../../types/cv.types";
+import { BiSolidCircle } from "react-icons/bi";
 
-function SkillsSection({ skills }) {
+function SkillsSection({ skills }: SkillsSectionProps) {
   return (
     <div className="habilidades m-5 text-gray-800 mb-">
       <div className="flex items-center gap-2 mb-4">

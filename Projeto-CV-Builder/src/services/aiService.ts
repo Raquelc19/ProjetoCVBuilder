@@ -1,4 +1,6 @@
-export async function upgradeResume(resume: string, apiKey: string): Promise<string> {
+import type { UpgradeResumeProps } from "../types/api.types";
+
+export async function upgradeResume({ resume, apiKey }: UpgradeResumeProps): Promise<string> {
     if(!apiKey) {
         throw new Error("API Key não encontrada");
     }
